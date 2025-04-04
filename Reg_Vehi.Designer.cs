@@ -166,6 +166,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Reg_Vehi";
             this.Text = "Reg_Vehi";
+            this.Load += new System.EventHandler(this.Reg_Vehi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

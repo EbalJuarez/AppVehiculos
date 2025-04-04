@@ -37,5 +37,10 @@ namespace AppVehiculos
             Registros registros = new Registros();
             registros.Show();
         }
+
+        private void Reg_Vehi_Load(object sender, EventArgs e)
+        {
+            Listas_Ve = guardado.LeerV("../../Registro_Vehiculos");
+        }
     }
 }

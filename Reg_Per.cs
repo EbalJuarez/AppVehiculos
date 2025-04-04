@@ -27,7 +27,7 @@ namespace AppVehiculos
 
         private void Reg_Per_Load(object sender, EventArgs e)
         {
-
+            Lista_Clientes = Guardado.LeerC("../../Registro_Clientes");
         }
 
         private void buttonRegistrar_Click(object sender, EventArgs e)
