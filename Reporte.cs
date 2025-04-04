@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace AppVehiculos
 {
-    internal class Vehiculos
+    internal class Reporte
     {
+        public string Name { get; set; }
         public string Placa { get; set; }
-        public string Marca { get; set; }
+        public string Marca {  get; set; }
         public string Modelo { get; set; }
-        public string color { get; set; }
-        public float P_km { get; set; }
+        public string Color { get; set; }
+        public float Pre_km { get; set; } 
+        public float total {  get; set; }
     }
 }

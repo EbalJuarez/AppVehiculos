@@ -171,6 +171,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Alquiler";
             this.Text = "Alquiler";
+            this.Load += new System.EventHandler(this.Alquiler_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

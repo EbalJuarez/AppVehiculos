@@ -36,7 +36,7 @@ namespace AppVehiculos
             cliente.Direccion = textBoxDireccion.Text;
             cliente.Nit = int.Parse(textBoxNit.Text);
             Lista_Clientes.Add(cliente);
-            Guardado.GuardarC("../../Listas_Clientes",Lista_Clientes);
+            Guardado.GuardarC("../../Registro_Clientes",Lista_Clientes);
         }
 
         private void buttonRegresar_Click(object sender, EventArgs e)

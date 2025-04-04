@@ -12,13 +12,34 @@ namespace AppVehiculos
 {
     public partial class Alquiler : Form
     {
+        ProcesosGuardado procesosGuardado = new ProcesosGuardado();
         List<Alquileres> Lista_Alquileres = new List<Alquileres>();
+        List<Clientes> Lista_Clientes = new List<Clientes>();
+        List<Vehiculos> Lista_Vehiculos = new List<Vehiculos>(); 
         Alquileres alquileres = new Alquileres();
         public Alquiler()
         {
             InitializeComponent();
         }
 
+        private void RellenarCombos()
+        {
+            Lista_Clientes = procesosGuardado.LeerC("../../Registro_Clientes");
+            Lista_Vehiculos = procesosGuardado.LeerV("../../Registro_Vehiculos");
+            foreach(var Clientes in Lista_Clientes)
+            {
+                comboBoxNit.Items.Add(Clientes.Nit);
+            }
+            foreach(var Vehiculos in Lista_Vehiculos)
+            {
+                comboBoxPlaca.Items.Add(Vehiculos.Placa);
+            }
+        }
+
+        private void Clear()
+        {
+            textBoxKmRecorrido.Text = string.Empty;
+        }
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -43,7 +64,14 @@ namespace AppVehiculos
             alquileres.Fecha_dev = monthCalendarDevolucion.SelectionStart;
             alquileres.Fecha_al = monthCalendarAlquiler.SelectionStart;
             alquileres.Km_rec = int.Parse(textBoxKmRecorrido.Text);
+            Clear();
             Lista_Alquileres.Add(alquileres);
+            procesosGuardado.GuardarAl("../../Registro_Alquileres", Lista_Alquileres);
+        }
+
+        private void Alquiler_Load(object sender, EventArgs e)
+        {
+            RellenarCombos();
         }
     }
 }

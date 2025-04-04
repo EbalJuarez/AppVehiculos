@@ -24,11 +24,11 @@ namespace AppVehiculos
         {
             vehiculo.Placa = textBoxPlaca.Text;
             vehiculo.Modelo = textBoxModelo.Text;
-            vehiculo.P_km = textBoxPre_Km.Text;
+            vehiculo.P_km = float.Parse(textBoxPre_Km.Text);
             vehiculo.color = textBoxColor.Text;
             vehiculo.Marca = textBoxMarca.Text;
             Listas_Ve.Add(vehiculo);
-            guardado.GuardarV(".../../Lista_Vehiculos", Listas_Ve);
+            guardado.GuardarV("../../Registro_Vehiculos", Listas_Ve);
         }
 
         private void buttonRegresar_Click(object sender, EventArgs e)
