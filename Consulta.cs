@@ -64,5 +64,21 @@ namespace AppVehiculos
             this.Hide();
             form1.Show();
         }
+
+        private void buttonMostrar_Click(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedItem.ToString() == "Mostrar todos")
+            {
+                Cargar_Reporte();
+            }
+            if (comboBox1.SelectedItem.ToString() == "De mayor a menor (Total a pagar)")
+            {
+                Lista_Reporte = ProcesosGuardado.LeerRep("../../Reportes");
+                Lista_Reporte = Lista_Reporte.OrderByDescending(x => x.total).ToList();
+                dataGridViewReporte.DataSource = null;
+                dataGridViewReporte.DataSource = Lista_Reporte;
+                dataGridViewReporte.Refresh();
+            }
+        }
     }
 }
