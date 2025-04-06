@@ -12,10 +12,11 @@ namespace AppVehiculos
 {
     public partial class Alquiler : Form
     {
-        ProcesosGuardado procesosGuardado = new ProcesosGuardado();
+        ProcesosGuardado ProcesosGuardado = new ProcesosGuardado();
         List<Alquileres> Lista_Alquileres = new List<Alquileres>();
         List<Clientes> Lista_Clientes = new List<Clientes>();
         List<Vehiculos> Lista_Vehiculos = new List<Vehiculos>(); 
+        List<Reporte> Lista_Reporte = new List<Reporte>(); 
         Alquileres alquileres = new Alquileres();
         public Alquiler()
         {
@@ -24,8 +25,8 @@ namespace AppVehiculos
 
         private void RellenarCombos()
         {
-            Lista_Clientes = procesosGuardado.LeerC("../../Registro_Clientes");
-            Lista_Vehiculos = procesosGuardado.LeerV("../../Registro_Vehiculos");
+            Lista_Clientes = ProcesosGuardado.LeerC("../../Registro_Clientes");
+            Lista_Vehiculos = ProcesosGuardado.LeerV("../../Registro_Vehiculos");
             foreach(var Clientes in Lista_Clientes)
             {
                 comboBoxNit.Items.Add(Clientes.Nit);
@@ -57,6 +58,36 @@ namespace AppVehiculos
             form1.Show();
         }
 
+        private void crear_Reporte()
+        {
+            Lista_Reporte = ProcesosGuardado.LeerRep("../../Reportes");
+            foreach (var alquileres in Lista_Alquileres)
+            {
+                foreach (var clientes in Lista_Clientes)
+                {
+                    foreach (var vehiculso in Lista_Vehiculos)
+                    {
+                        if (clientes.Nit == alquileres.Nit_al && alquileres.Placa_al == vehiculso.Placa)
+                        {
+                            Reporte Reporte = new Reporte();
+                            Reporte.Name = clientes.Nombre;
+                            Reporte.Placa = alquileres.Placa_al;
+                            Reporte.Pre_km = vehiculso.P_km;
+                            Reporte.Color = vehiculso.color;
+                            Reporte.Modelo = vehiculso.Modelo;
+                            Reporte.Marca = vehiculso.Marca;
+                            Reporte.Fec_Reg = alquileres.Fecha_dev;
+                            Reporte.total = alquileres.Km_rec * vehiculso.P_km;
+                            Lista_Reporte.Add(Reporte);
+                        }
+
+                    }
+                }
+            }
+            ProcesosGuardado.GuardarRep("../../Reportes", Lista_Reporte);
+
+        }
+
         private void buttonRegAl_Click(object sender, EventArgs e)
         {
             alquileres.Placa_al = comboBoxPlaca.SelectedItem.ToString();
@@ -66,7 +97,8 @@ namespace AppVehiculos
             alquileres.Km_rec = int.Parse(textBoxKmRecorrido.Text);
             Clear();
             Lista_Alquileres.Add(alquileres);
-            procesosGuardado.GuardarAl("../../Registro_Alquileres", Lista_Alquileres);
+            ProcesosGuardado.GuardarAl("../../Registro_Alquileres", Lista_Alquileres);
+            crear_Reporte();
         }
 
         private void Alquiler_Load(object sender, EventArgs e)

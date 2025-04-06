@@ -12,7 +12,7 @@ namespace AppVehiculos
 {
     public partial class Consulta : Form
     {
-        Reporte Reporte = new Reporte();
+       
         List<Reporte> Lista_Reporte = new List<Reporte>();
         List<Vehiculos> Lista_Vehiculos = new List<Vehiculos>();
         List<Clientes> Lista_Clientes = new List<Clientes>();
@@ -39,29 +39,9 @@ namespace AppVehiculos
             dataGridViewVehiculos.Refresh();
         }
 
-        private void Cargar_Alquileres()
+        private void Cargar_Reporte()
         {
-            Lista_Alquileres = ProcesosGuardado.LeerAl("../../Registro_Alquileres"); 
-            foreach(var alquileres in Lista_Alquileres)
-            {
-                foreach(var clientes in Lista_Clientes)
-                {
-                    foreach (var vehiculso in Lista_Vehiculos)
-                    {
-                        if (alquileres.Nit_al == clientes.Nit && alquileres.Placa_al == vehiculso.Placa)
-                        {
-                            Reporte.Name = clientes.Nombre;
-                            Reporte.Placa = alquileres.Placa_al;
-                            Reporte.Pre_km = vehiculso.P_km;
-                            Reporte.Color = vehiculso.color;
-                            Reporte.Modelo = vehiculso.Modelo;
-                            Reporte.Marca = vehiculso.Marca;
-                            Reporte.total = alquileres.Km_rec * vehiculso.P_km;
-                        }
-                        Lista_Reporte.Add(Reporte);
-                    } 
-                }
-            }
+            Lista_Reporte = ProcesosGuardado.LeerRep("../../Reportes");
             dataGridViewReporte.DataSource = null;
             dataGridViewReporte.DataSource = Lista_Reporte;
             dataGridViewReporte.Refresh();
@@ -70,12 +50,19 @@ namespace AppVehiculos
         {
             Cargar_Clientes();
             Cargar_Vehiculos();
-            Cargar_Alquileres();
+            Cargar_Reporte();
         }
 
         private void dataGridViewVehiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void buttonRegresar_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            this.Hide();
+            form1.Show();
         }
     }
 }

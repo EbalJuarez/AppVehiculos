@@ -13,7 +13,8 @@ namespace AppVehiculos
         public string Marca {  get; set; }
         public string Modelo { get; set; }
         public string Color { get; set; }
-        public float Pre_km { get; set; } 
+        public float Pre_km { get; set; }
+        public DateTime Fec_Reg { get; set; }
         public float total {  get; set; }
     }
 }

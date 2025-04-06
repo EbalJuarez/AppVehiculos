@@ -13,7 +13,7 @@ namespace AppVehiculos
     public partial class Reg_Vehi : Form
     {
         List<Vehiculos> Listas_Ve = new List<Vehiculos>();
-        Vehiculos vehiculo = new Vehiculos();
+        
         ProcesosGuardado guardado = new ProcesosGuardado();
         public Reg_Vehi()
         {
@@ -30,6 +30,7 @@ namespace AppVehiculos
         }
         private void buttonRegistro_Click(object sender, EventArgs e)
         {
+            Vehiculos vehiculo = new Vehiculos();
             vehiculo.Placa = textBoxPlaca.Text;
             vehiculo.Modelo = textBoxModelo.Text;
             vehiculo.P_km = float.Parse(textBoxPre_Km.Text);

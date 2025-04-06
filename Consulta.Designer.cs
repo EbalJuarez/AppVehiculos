@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewReporte = new System.Windows.Forms.DataGridView();
+            this.buttonRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVehiculos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReporte)).BeginInit();
@@ -44,14 +45,14 @@
             this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewClientes.Location = new System.Drawing.Point(36, 31);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
-            this.dataGridViewClientes.Size = new System.Drawing.Size(240, 150);
+            this.dataGridViewClientes.Size = new System.Drawing.Size(301, 150);
             this.dataGridViewClientes.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 8);
+            this.label1.Location = new System.Drawing.Point(122, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 20);
             this.label1.TabIndex = 1;
@@ -60,9 +61,9 @@
             // dataGridViewVehiculos
             // 
             this.dataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewVehiculos.Location = new System.Drawing.Point(455, 31);
+            this.dataGridViewVehiculos.Location = new System.Drawing.Point(411, 31);
             this.dataGridViewVehiculos.Name = "dataGridViewVehiculos";
-            this.dataGridViewVehiculos.Size = new System.Drawing.Size(240, 150);
+            this.dataGridViewVehiculos.Size = new System.Drawing.Size(310, 150);
             this.dataGridViewVehiculos.TabIndex = 2;
             this.dataGridViewVehiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVehiculos_CellContentClick);
             // 
@@ -88,16 +89,27 @@
             // dataGridViewReporte
             // 
             this.dataGridViewReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReporte.Location = new System.Drawing.Point(257, 242);
+            this.dataGridViewReporte.Location = new System.Drawing.Point(156, 242);
             this.dataGridViewReporte.Name = "dataGridViewReporte";
-            this.dataGridViewReporte.Size = new System.Drawing.Size(240, 150);
+            this.dataGridViewReporte.Size = new System.Drawing.Size(442, 150);
             this.dataGridViewReporte.TabIndex = 5;
+            // 
+            // buttonRegresar
+            // 
+            this.buttonRegresar.Location = new System.Drawing.Point(620, 395);
+            this.buttonRegresar.Name = "buttonRegresar";
+            this.buttonRegresar.Size = new System.Drawing.Size(75, 23);
+            this.buttonRegresar.TabIndex = 6;
+            this.buttonRegresar.Text = "Regresar";
+            this.buttonRegresar.UseVisualStyleBackColor = true;
+            this.buttonRegresar.Click += new System.EventHandler(this.buttonRegresar_Click);
             // 
             // Consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonRegresar);
             this.Controls.Add(this.dataGridViewReporte);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -123,5 +135,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridViewReporte;
+        private System.Windows.Forms.Button buttonRegresar;
     }
 }

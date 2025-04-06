@@ -59,5 +59,22 @@ namespace AppVehiculos
             lista = JsonConvert.DeserializeObject<List<Alquileres>>(json);
             return lista;
         }
+
+        public void GuardarRep(string archivo, List<Reporte> asistencias)
+        {
+            string json = JsonConvert.SerializeObject(asistencias);
+            System.IO.File.WriteAllText(archivo, json);
+        }
+
+        public List<Reporte> LeerRep(string archivo)
+        {
+            List<Reporte> lista = new List<Reporte>();
+            StreamReader jsonStream = File.OpenText(archivo);
+            string json = jsonStream.ReadToEnd();
+            jsonStream.Close();
+
+            lista = JsonConvert.DeserializeObject<List<Reporte>>(json);
+            return lista;
+        }
     }
 }

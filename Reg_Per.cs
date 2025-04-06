@@ -13,7 +13,7 @@ namespace AppVehiculos
     public partial class Reg_Per : Form
     {
         List<Clientes> Lista_Clientes = new List<Clientes>();
-        Clientes cliente= new Clientes();
+       
         ProcesosGuardado Guardado = new ProcesosGuardado();
         public Reg_Per()
         {
@@ -38,6 +38,7 @@ namespace AppVehiculos
 
         private void buttonRegistrar_Click(object sender, EventArgs e)
         {
+            Clientes cliente = new Clientes();
             cliente.Nombre = textBoxNombre.Text;
             cliente.Direccion = textBoxDireccion.Text;
             cliente.Nit = int.Parse(textBoxNit.Text);
