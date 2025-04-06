@@ -20,6 +20,14 @@ namespace AppVehiculos
             InitializeComponent();
         }
 
+        private void clear()
+        {
+            textBoxColor.Text = string.Empty;
+            textBoxMarca.Text = string.Empty;
+            textBoxModelo.Text = string.Empty;
+            textBoxPlaca.Text = string.Empty;
+            textBoxPre_Km.Text = string.Empty;
+        }
         private void buttonRegistro_Click(object sender, EventArgs e)
         {
             vehiculo.Placa = textBoxPlaca.Text;
@@ -29,6 +37,7 @@ namespace AppVehiculos
             vehiculo.Marca = textBoxMarca.Text;
             Listas_Ve.Add(vehiculo);
             guardado.GuardarV("../../Registro_Vehiculos", Listas_Ve);
+            clear();
         }
 
         private void buttonRegresar_Click(object sender, EventArgs e)

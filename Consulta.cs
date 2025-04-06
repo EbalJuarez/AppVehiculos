@@ -72,5 +72,10 @@ namespace AppVehiculos
             Cargar_Vehiculos();
             Cargar_Alquileres();
         }
+
+        private void dataGridViewVehiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

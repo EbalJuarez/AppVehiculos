@@ -29,6 +29,12 @@ namespace AppVehiculos
         {
             Lista_Clientes = Guardado.LeerC("../../Registro_Clientes");
         }
+        private void clear()
+        {
+            textBoxDireccion.Text = string.Empty;
+            textBoxNit.Text = string.Empty;
+            textBoxNombre.Text = string.Empty;
+        }
 
         private void buttonRegistrar_Click(object sender, EventArgs e)
         {
@@ -37,6 +43,7 @@ namespace AppVehiculos
             cliente.Nit = int.Parse(textBoxNit.Text);
             Lista_Clientes.Add(cliente);
             Guardado.GuardarC("../../Registro_Clientes",Lista_Clientes);
+            clear();
         }
 
         private void buttonRegresar_Click(object sender, EventArgs e)

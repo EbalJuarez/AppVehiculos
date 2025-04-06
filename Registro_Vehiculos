@@ -1,1 +1,23 @@
-[{"Placa":"T234AB2","Marca":"Suzuki","Modelo":"2015","color":"Gris","P_km":50.5},{"Placa":"B654LM2","Marca":"Toyota","Modelo":"2019","color":"Rojo","P_km":200.0}]
+[
+    {
+        "Placa": "T234AB2",
+        "Marca": "Suzuki",
+        "Modelo": "2015",
+        "color": "Gris",
+        "P_km": 50.5
+    },
+    {
+        "Placa": "B654LM2",
+        "Marca": "Toyota",
+        "Modelo": "2019",
+        "color": "Rojo",
+        "P_km": 200.0
+    },
+    {
+        "Placa": "C902B74",
+        "Marca": "Honda",
+        "Modelo": "2009",
+        "color": "Azul",
+        "P_km": 20.0
+    }
+]

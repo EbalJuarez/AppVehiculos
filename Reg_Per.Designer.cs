@@ -72,6 +72,7 @@
             // textBoxNit
             // 
             this.textBoxNit.Location = new System.Drawing.Point(160, 120);
+            this.textBoxNit.MaxLength = 12;
             this.textBoxNit.Name = "textBoxNit";
             this.textBoxNit.Size = new System.Drawing.Size(260, 20);
             this.textBoxNit.TabIndex = 3;

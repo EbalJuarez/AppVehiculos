@@ -64,6 +64,7 @@
             this.dataGridViewVehiculos.Name = "dataGridViewVehiculos";
             this.dataGridViewVehiculos.Size = new System.Drawing.Size(240, 150);
             this.dataGridViewVehiculos.TabIndex = 2;
+            this.dataGridViewVehiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVehiculos_CellContentClick);
             // 
             // label2
             // 
